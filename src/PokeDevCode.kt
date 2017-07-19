@@ -45,6 +45,7 @@ fun main(args: Array<String>) {
         }
 
         val ataqueAleatorio : Int = 1 + random.nextInt(pokemonSelvagem.ataques.size)
+
         if(processaAtaque(pokemonSelvagem,pokemon,ataqueAleatorio)){
             break
         }else{
@@ -70,14 +71,12 @@ fun processaAtaque(pokemonAtacante: Pokemon, pokemonDefenor: Pokemon, ataqueSele
     if(pokemonDefenor.hp <= 0) {
         println("${pokemonDefenor.nome} Morreu!")
         println("${pokemonAtacante.nome} venceu a batalha!")
-
         return true
     }
     return false
 }
 
-fun calcularDano(valorAtaque: Int, valorDefesa: Int, ataque: Ataque): Int
-        = ((((2 * 1 + 10.0) / 250) * (valorAtaque / valorDefesa) * ataque.poder  + 2) * 1.5).toInt()
+fun calcularDano(valorAtaque: Int, valorDefesa: Int, ataque: Ataque): Int = ((((2 * 1 + 10.0) / 250) * (valorAtaque / valorDefesa) * ataque.poder  + 2) * 1.5).toInt()
 
 fun mostrarDados(pokemon: Pokemon) {
     println("Você escolheu um ${pokemon.nome} \n " +
